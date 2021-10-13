@@ -10,9 +10,9 @@ RUN pip install -r ./requirements.txt
 
 # Copy local folder into the container
 COPY app.py .
-COPY *.pkl *
-COPY templates/*.html templates/*
-COPY Test_data.csv Test_data.csv
+COPY *.pkl ./
+COPY templates/*.html ./templates/
+COPY Test_data.csv .
 
 # Set "python" as the entry point
 ENTRYPOINT ["python"]
