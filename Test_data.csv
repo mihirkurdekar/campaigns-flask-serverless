@@ -1,4 +1,4 @@
-,device_id,gender,age,group_train,day_of_week,hour,phone_brand,train_test_flag,super_category,Total_No_events,Change_in_LatLong,longitude_median,latitude_median,cluster_id,super_category_en,phone_brands_en
+index,device_id,gender,age,group_train,day_of_week,hour,phone_brand,train_test_flag,super_category,Total_No_events,Change_in_LatLong,longitude_median,latitude_median,cluster_id,super_category_en,phone_brands_en
 105725,2948104315232910000,0,65,F32+,5.0,17.0,samsung,test,Industry,5,4,110.765,20.41,-1,4,41
 105726,2948104315232910000,0,65,F32+,5.0,23.0,samsung,test,Industry,5,4,110.765,20.41,-1,4,41
 105727,2948104315232910000,0,65,F32+,2.0,18.0,samsung,test,Industry,5,4,110.765,20.41,-1,4,41

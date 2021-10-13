@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Home</title>
+  <title>Campaigns</title>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
@@ -16,7 +16,23 @@
 </head>
 
 <body>
-    <h1>Prediction Home</h1>
-    <a href="/age">Age Analysis</a>
-    <a href="/gender">Gender Analysis</a>
+    <h1>Predictions</h1>
+    <a href="/">Home</a>
+    <table>
+        <tr>
+            {% for header in headings %}
+            <th>{{ header }}</th>
+            {%  endfor %}            
+        </tr>
+        {% for row in data %}
+        <tr>
+            {% for cell in row %}
+            <td>{{ cell }}</td>
+            {% endfor %}
+        </tr>
+        {%endfor %}
+    </table>
 </body>
+
+
+</html>
