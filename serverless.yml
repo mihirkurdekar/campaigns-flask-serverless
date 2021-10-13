@@ -12,6 +12,11 @@ provider:
   lambdaHashingVersion: '20201221'
 
 functions:
+  package:
+    handler: wsgi_handler.handler
+    patterns:
+      - '!venv/**'
+      - '!.idea/**'
   api:
     handler: wsgi_handler.handler
     events:

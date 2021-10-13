@@ -32,9 +32,9 @@ def age_prediction():
     age_predict = age_model.predict(x_test.values)
     x_test["predicted_age"]= age_predict
 
-    campain4=test_data[test_data["predicted_age"]<25]["device_id"][:5].to_list()
-    campain5=test_data[test_data["predicted_age"].between(24,32)]["device_id"][:5].to_list()
-    campain6=test_data[test_data["predicted_age"]>32]["device_id"][:5].to_list()
+    campain4=test_data[x_test["predicted_age"]<25]["device_id"][:15].to_list()
+    campain5=test_data[x_test["predicted_age"].between(24,32)]["device_id"][15:35].to_list()
+    campain6=test_data[x_test["predicted_age"]>32]["device_id"][:10].to_list()
     headings=("campaign","device_id","description")
     data_list=[]
     for i in np.unique(campain4):
@@ -56,13 +56,13 @@ def gender_prediction():
     x_test = test_data.drop(
         columns=["gender", "age", "group_train", "super_category", "train_test_flag", "device_id", "phone_brand"])
     gender_predict = gender_model.predict_proba(x_test)
-    y_pred = [1 if x > 0.759951 else 0 for x in gender_predict[:, 1]]
+    y_pred = [1 if x > 0.7 else 0 for x in gender_predict[:, 1]]
     x_test["predicted_gender"] = y_pred
-    sampled_df = x_test.sample(50)
-    print(sampled_df.dtypes)
-    campain1 = test_data[sampled_df["predicted_gender"] == 0]["device_id"][:5].to_list()
-    campain2 = test_data[sampled_df["predicted_gender"] == 0]["device_id"][5:10].to_list()
-    campain3 = test_data[sampled_df["predicted_gender"] == 1]["device_id"][:5].to_list()
+    #sampled_df = x_test.sample(50)
+    #print(sampled_df.dtypes)
+    campain1 = test_data[x_test["predicted_gender"] == 0]["device_id"][:15].to_list()
+    campain2 = test_data[x_test["predicted_gender"] == 0]["device_id"][15:35].to_list()
+    campain3 = test_data[x_test["predicted_gender"] == 1]["device_id"][:10].to_list()
     data_list = []
     for i in np.unique(campain1):
         temp = (1, i, "Specific personalised fashion-related campaigns targeting female customers")
