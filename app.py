@@ -6,8 +6,8 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 
 app = Flask(__name__)
-#s3 = boto3.client('s3', aws_access_key_id='AKIA6H372KV2JTKVRUW3',
-#                  aws_secret_access_key='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')
+#s3 = boto3.client('s3', aws_access_key_id='######',
+#                  aws_secret_access_key='######')
 
 def get_test_data():
     test_data = pd.read_csv(r"Test_data.csv")
